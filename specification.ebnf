@@ -1,0 +1,11 @@
+declaration = "We need ", expression, " ", var, ".";
+
+assignment = var, " is ", expression, ".";
+expression = (number | var), { operator, "by ", (number | var) };
+operator = ("potenciated " | "diluted ");
+
+number = (nonZeroDigit,digit+|digit);
+nonZeroDigit = [1-9];
+digit = [0-9];
+
+var = ("Aconite"| "Aesculus hippocastanum"| "Anthracinum"| "Anthracinum bovum"| "Anthracinum suum"| "Allium cepa"| "Antimonium Arsenicate"| "Antimonium tartaricum"| "Argentum nitricum"| "Arnica"| "Arsenicum album"| "Baptisia"| "Belladonna"| "Bellis perennis"| "Bryonia"| "Calcarea carbonica"| "Calendula"| "Chamomilla"| "Camphor"| "Colocynthis"| "Cuprum metallicum"| "Digitalis"| "Drosera"| "Dulcamara"| "Ferrum phosphoricum"| "Gelsemium"| "Glonoinum"| "Graphites"| "Hamamelis"| "Hepar sulfuris calcareum"| "Ignatia amara"| "Kalium bichromicum"| "Lachesis"| "Ledum"| "Lycopodium"| "Mercurius vivus"| "Natrum muriaticum"| "Natrum sulphuricum"| "Nux vomica"| "Oscillococcinum"| "Petroleum"| "Phosphorus"| "Picricum acidum"| "Pulsatilla"| "Rhus toxicodendron"| "Ruta"| "Sepia"| "Silicea"| "Sulphur"| "Thea Sinensis"| "Camellia Sinensis"| "Thuja"| "Urtica urens");
