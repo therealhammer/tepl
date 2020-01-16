@@ -1,6 +1,6 @@
 
-We need one Calendula.
-We need one Dulcarama.
+We need 1 Calendula.
+We need 1 Dulcarama.
 Dulcarama is poitenciated by 1.
 Feel the vibration of Dulcarama.
 Calendula is potenciated by 1.
@@ -12,8 +12,8 @@ Shake the Calendula.
 
 
 
-#int Calendula = 0;
-#int Dulcarama = 0;
+#int Calendula = 1;
+#int Dulcarama = 1;
 #Dulcarama = Dulcarama + 1;
 #while (Dulcarama != 0)
 #{
