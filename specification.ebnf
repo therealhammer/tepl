@@ -25,7 +25,7 @@
 <read> ::= "Extract the mother tinkture of " <var>
 <print> ::= "Shake the " <expression> "."
 
-<number> ::= (<nonZeroDigit>(<digit>)*|<digit>)
+<number> ::= (<nonZeroDigit> (<digit>)* | <digit>)
 <nonZeroDigit> ::= [1-9]
 <digit> ::= [0-9]
 
