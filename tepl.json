@@ -1,0 +1,22 @@
+{
+	"language": {
+		"name": "tepl",
+		"vars": ["Aconite", "Aesculus hippocastanum", "Anthracinum", "Anthracinum bovum", "Anthracinum suum", "Allium cepa", "Antimonium Arsenicate", "Antimonium tartaricum", "Argentum nitricum", "Arnica", "Arsenicum album", "Baptisia", "Belladonna", "Bellis perennis", "Bryonia", "Calcarea carbonica", "Calendula", "Chamomilla", "Camphor", "Colocynthis", "Cuprum metallicum", "Digitalis", "Drosera", "Dulcamara", "Ferrum phosphoricum", "Gelsemium", "Glonoinum", "Graphites", "Hamamelis", "Hepar sulfuris calcareum", "Ignatia amara", "Kalium bichromicum", "Lachesis", "Ledum", "Lycopodium", "Mercurius vivus", "Natrum muriaticum", "Natrum sulphuricum", "Nux vomica", "Oscillococcinum", "Petroleum", "Phosphorus", "Picricum acidum", "Pulsatilla", "Rhus toxicodendron", "Ruta", "Sepia", "Silicea", "Sulphur", "Thea Sinensis", "Camellia Sinensis", "Thuja", "Urtica urens"],
+		"nr": "int",
+		"op":["potenciated", "diluted"],
+		"operation": "{op} by {nr}",
+		"var":["{vars}", "{vars} {operation}"],
+		"decl":"We need one {var}.",
+		"inc":"{var} is potenciated by {nr}",
+		"dec":"{var} is diluted by {nr}",
+		"if": "Do you feel the energy of {var}?",
+		"if not": "Do you feel the energy of {var} lacking?",
+		"elif":"Or do you feel the energy of {var}?",
+		"elif not":"Or dont you feel the energy of {var} lacking?",
+		"endif":"You feel it.",
+		"while":"Feel the vibration of {var}.",
+		"while not":"Feel the vibration of {var} lacking.",
+		"endwhile":"You feel it.",
+		"print": "Shake the {var}."
+	}
+}
