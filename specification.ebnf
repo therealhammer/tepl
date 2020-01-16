@@ -1,32 +1,32 @@
-tepl = (ifClause | whileClause | declaration | assignment | read | print);
+<tepl> = (<ifClause> | <whileClause> | <declaration> | <assignment> | <read> | <print>);
 
-statement = {(ifClause | whileClause | declaration | assignment | read | print)};
+<statement> = {(<ifClause> | <whileClause> | <declaration> | <assignment> | <read> | <print>)};
 
-ifClause = (if|ifNot), statement, {(elif|elifNot), statment}, endIf;
+<ifClause> = (<if>|<ifNot>), <statement>, {(<elif>|<elifNot>), <statement>}, <endIf>;
 
-if = "Do you feel the energy of ", expression, "?";
-ifNot = "Do you feel the energy of ", expression, " lacking?";
-elif = "Or do you feel the energy of ", expression, "?";
-elifNot = "Or do you feel the energy of ", expression, " lacking?";
-endIf = "You feel it.";
+<if> = "Do you feel the energy of ", <expression>, "?";
+<ifNot> = "Do you feel the energy of ", <expression>, " lacking?";
+<elif> = "Or do you feel the energy of ", <expression>, "?";
+<elifNot> = "Or do you feel the energy of ", <expression>, " lacking?";
+<endIf> = "You feel it.";
 
-whileClause = (while|whileNot), statement, endWhile;
+<whileClause> = (<while>|<whileNot>), <statement>, <endWhile>;
 
-while = "Feel the vibration of ", expression, ".";
-whileNot = "Feel the vibration of ", expression, " lacking.";
-endWhile = "You feel it.";
+<while> = "Feel the vibration of ", <expression>, ".";
+<whileNot> = "Feel the vibration of ", <expression>, " lacking.";
+<endWhile> = "You feel it.";
 
-declaration = "We need ", expression, " ", var, ".";
+<declaration> = "We need ", <expression>, " ", <var>, ".";
 
-assignment = var, " is ", expression, ".";
-expression = (number | var), { operator, "by ", (number | var) };
-operator = ("potenciated " | "diluted ");
+<assignment> = <var>, " is ", <expression>, ".";
+<expression> = (<number> | <var>), { <operator>, "by ", (<number> | <var>) };
+<operator> = ("potenciated " | "diluted ");
 
-read = "Extract the mother tinkture of ", var;
-print = "Shake the ", expression, ".";
+<read> = "Extract the mother tinkture of ", <var>;
+<print> = "Shake the ", <expression>, ".";
 
-number = (nonZeroDigit,digit+|digit);
-nonZeroDigit = [1-9];
-digit = [0-9];
+<number> = (<nonZeroDigit>,{<digit>}|<digit>);
+<nonZeroDigit> = [1-9];
+<digit> = [0-9];
 
-var = ("Aconite"| "Aesculus hippocastanum"| "Anthracinum"| "Anthracinum bovum"| "Anthracinum suum"| "Allium cepa"| "Antimonium Arsenicate"| "Antimonium tartaricum"| "Argentum nitricum"| "Arnica"| "Arsenicum album"| "Baptisia"| "Belladonna"| "Bellis perennis"| "Bryonia"| "Calcarea carbonica"| "Calendula"| "Chamomilla"| "Camphor"| "Colocynthis"| "Cuprum metallicum"| "Digitalis"| "Drosera"| "Dulcamara"| "Ferrum phosphoricum"| "Gelsemium"| "Glonoinum"| "Graphites"| "Hamamelis"| "Hepar sulfuris calcareum"| "Ignatia amara"| "Kalium bichromicum"| "Lachesis"| "Ledum"| "Lycopodium"| "Mercurius vivus"| "Natrum muriaticum"| "Natrum sulphuricum"| "Nux vomica"| "Oscillococcinum"| "Petroleum"| "Phosphorus"| "Picricum acidum"| "Pulsatilla"| "Rhus toxicodendron"| "Ruta"| "Sepia"| "Silicea"| "Sulphur"| "Thea Sinensis"| "Camellia Sinensis"| "Thuja"| "Urtica urens");
+<var> = ("Aconite"| "Aesculus hippocastanum"| "Anthracinum"| "Anthracinum bovum"| "Anthracinum suum"| "Allium cepa"| "Antimonium Arsenicate"| "Antimonium tartaricum"| "Argentum nitricum"| "Arnica"| "Arsenicum album"| "Baptisia"| "Belladonna"| "Bellis perennis"| "Bryonia"| "Calcarea carbonica"| "Calendula"| "Chamomilla"| "Camphor"| "Colocynthis"| "Cuprum metallicum"| "Digitalis"| "Drosera"| "Dulcamara"| "Ferrum phosphoricum"| "Gelsemium"| "Glonoinum"| "Graphites"| "Hamamelis"| "Hepar sulfuris calcareum"| "Ignatia amara"| "Kalium bichromicum"| "Lachesis"| "Ledum"| "Lycopodium"| "Mercurius vivus"| "Natrum muriaticum"| "Natrum sulphuricum"| "Nux vomica"| "Oscillococcinum"| "Petroleum"| "Phosphorus"| "Picricum acidum"| "Pulsatilla"| "Rhus toxicodendron"| "Ruta"| "Sepia"| "Silicea"| "Sulphur"| "Thea Sinensis"| "Camellia Sinensis"| "Thuja"| "Urtica urens" | ( <var>, {" ", <var>}));
