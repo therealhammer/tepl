@@ -6,6 +6,7 @@ def init():
 	with open(str(sys.argv[1])) as f:
 		program = f.read().split("\n")
 	program = parser(program)
+	print(program)
 	print(compile(program))
 
 def parser(prog):
@@ -26,7 +27,7 @@ def compile(prog):
 	lang_endblock = re.compile("You feel it.")
 	lang_dec = re.compile("We need (?P<dec>([0-9a-zA-Z]| )*)\ of (?P<var>([0-9a-zA-Z]| )*)\.")
 	lang_assign = re.compile("(?P<var>([0-9a-zA-Z]| )*)\ is (?P<exp>([0-9a-zA-Z]| )*)\.")
-	lang_read = re.compile("Extract the mother tinkture of (?P<var>([0-9a-zA-Z]| )*)\.")
+	lang_read = re.compile("Extract the mother tincture of (?P<var>([0-9a-zA-Z]| )*)\.")
 	lang_print = re.compile("Shake the (?P<var>([0-9a-zA-Z]| )*)\.")
 	for i in prog:
 		if(lang_ifnot.match(i)):
@@ -51,11 +52,14 @@ def compile(prog):
 			c = c + var(lang_read.match(i).group("var")) + "=getchar();\n"
 		elif(lang_print.match(i)):
 			c = c + "putchar(" + var(lang_print.match(i).group("var")) + ");\n"
+		else :
+			print("ALERT!! THIS DIDNT WORK! HOLY SHITFUCK! RUN! THE TINCTURE IS GOING TO EXPLODE!")
+			break
 	c = c + "}"
 	return c
 
 def expression(e):
-	
+	#TODO nächschte mal
 	return e
 
 def var(v):
