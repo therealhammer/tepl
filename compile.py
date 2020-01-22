@@ -57,9 +57,6 @@ def compile(prog):
 def expression(e):
 	return e
 
-def declaration(d):
-	return d
-
 def var(v):
 	v = "_".join(v.split(" "))
 	return v
