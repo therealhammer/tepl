@@ -22,7 +22,7 @@
 <expression> ::= (<number> | <var>) ( <operator> "by " (<number> | <var>) )*
 <operator> ::= ("potenciated " | "diluted ")
 
-<read> ::= "Extract the mother tinkture of " <var>
+<read> ::= "Extract the mother tincture of " <var>
 <print> ::= "Shake the " <expression> "."
 
 <number> ::= (<nonZeroDigit> (<digit>)* | <digit>)
