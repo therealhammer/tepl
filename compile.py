@@ -16,7 +16,7 @@ def parser(prog):
 	return returner
 
 def compile(prog):
-	c = "#include <stdio.h> int main(){"
+	c = "#include <stdio.h>\nint main(){\n"
 	lang_ifnot = re.compile("Do you feel the energy of (?P<condition>([0-9a-zA-Z]| )*) lacking\?")
 	lang_if = re.compile("Do you feel the energy of (?P<condition>([0-9a-zA-Z]| )*)\?")
 	lang_elifnot = re.compile("Or do you feel the energy of (?P<condition>([0-9a-zA-Z]| )*)lacking\?")
@@ -55,6 +55,7 @@ def compile(prog):
 	return c
 
 def expression(e):
+	
 	return e
 
 def var(v):
