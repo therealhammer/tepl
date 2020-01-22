@@ -16,7 +16,7 @@
 <whileNot> ::= "Feel the vibration of " <expression> " lacking."
 <endWhile> ::= "You feel it."
 
-<declaration> ::= "We need " <expression> " " <var> "."
+<declaration> ::= "We need " <expression> " of " <var> "."
 
 <assignment> ::= <var> " is " <expression> "."
 <expression> ::= (<number> | <var>) ( <operator> "by " (<number> | <var>) )*
