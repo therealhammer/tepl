@@ -24,7 +24,7 @@ def compile(prog):
 	lang_whilenot = re.compile("Feel the vibration of (?P<condition>([0-9a-zA-Z]| )*)lacking\.")
 	lang_while = re.compile("Feel the vibration of (?P<condition>([0-9a-zA-Z]| )*)\.")
 	lang_endblock = re.compile("You feel it.")
-	lang_dec = re.compile("We need (?P<dec>([0-9a-zA-Z]| )*)\.")
+	lang_dec = re.compile("We need (?P<dec>([0-9a-zA-Z]| )*)\ of (?P<var>([0-9a-zA-Z]| )*)\.")
 	lang_assign = re.compile("(?P<var>([0-9a-zA-Z]| )*)\ is (?P<exp>([0-9a-zA-Z]| )*)\.")
 	lang_read = re.compile("Extract the mother tinkture of (?P<var>([0-9a-zA-Z]| )*)\.")
 	lang_print = re.compile("Shake the (?P<var>([0-9a-zA-Z]| )*)\.")
@@ -44,7 +44,7 @@ def compile(prog):
 		elif(lang_endblock.match(i)):
 			c = c + "}\n"
 		elif(lang_dec.match(i)):
-			c = c + declaration(lang_dec.match(i).group("dec")) + ";\n"
+			c = c + "int " + var(lang_dec.match(i).group("var")) + "=" + expression(lang_dec.match(i).group("dec")) + ";\n"
 		elif(lang_assign.match(i)):
 			c = c + var(lang_assign.match(i).group("var")) + "=" + expression(lang_assign.match(i).group("exp")) + ";\n"
 		elif(lang_read.match(i)):
@@ -61,7 +61,7 @@ def declaration(d):
 	return d
 
 def var(v):
-	v = "-".join(v.split(" "))
+	v = "_".join(v.split(" "))
 	return v
 
 init()
