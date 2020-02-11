@@ -1,26 +1,26 @@
 
-We need 1 of Calendula.
+We need 1 of Antimonium Arsenicate.
 We need 1 of Dulcarama.
-Dulcarama is potenciated by 1.
+Dulcarama is Dulcarama potenciated by 1.
 Feel the vibration of Dulcarama.
-Calendula is potenciated by 1.
-Do you feel the energy of Calendula delluted by 11 lacking?
-Dulcarama is delluted by 1.
+Antimonium Arsenicate is Antimonium Arsenicate potenciated by 1.
+Do you feel the energy of Antimonium Arsenicate diluted by 11 lacking?
+Dulcarama is Dulcarama diluted by 1.
 You feel it.
 You feel it.
-Shake the Calendula.
+Shake the Antimonium Arsenicate.
 
 
 
-#int Calendula = 1;
+#int Antimonium_Arsenicate = 1;
 #int Dulcarama = 1;
 #Dulcarama = Dulcarama + 1;
 #while (Dulcarama != 0)
 #{
-#	Calendula = Calendula + 1;
-#	if (Calendula - 11 == 0)
+#	Antimonium_Arsenicate = Antimonium_Arsenicate + 1;
+#	if (Antimonium_Arsenicate - 11 == 0)
 #	{
 #		Dulcarama = Dulcarama -1;
 #	}
 #}
-#print(Calendula);
+#print(Antimonium_Arsenicate);
