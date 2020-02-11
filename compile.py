@@ -3,10 +3,13 @@ import re
 
 def init():
 	program = []
+	if(len(sys.argv) < 2):
+		print("ABORT; GIVE ME A FILE! PLS I DIE NOW!")#DEBUG
+		exit()
 	with open(str(sys.argv[1])) as f:
 		program = f.read().split("\n")
 	program = parser(program)
-	print(program)
+	#print(program)#DEBUG
 	print(compile(program))
 
 def parser(prog):
@@ -25,8 +28,8 @@ def compile(prog):
 	lang_whilenot = re.compile("Feel the vibration of (?P<condition>([0-9a-zA-Z]| )*)lacking\.")
 	lang_while = re.compile("Feel the vibration of (?P<condition>([0-9a-zA-Z]| )*)\.")
 	lang_endblock = re.compile("You feel it.")
-	lang_dec = re.compile("We need (?P<dec>([0-9a-zA-Z]| )*)\ of (?P<var>([0-9a-zA-Z]| )*)\.")
-	lang_assign = re.compile("(?P<var>([0-9a-zA-Z]| )*)\ is (?P<exp>([0-9a-zA-Z]| )*)\.")
+	lang_dec = re.compile("We need (?P<dec>([0-9a-zA-Z]| )*) of (?P<var>([0-9a-zA-Z]| )*)\.")
+	lang_assign = re.compile("(?P<var>([0-9a-zA-Z]| )*) is (?P<exp>([0-9a-zA-Z]| )*)\.")
 	lang_read = re.compile("Extract the mother tincture of (?P<var>([0-9a-zA-Z]| )*)\.")
 	lang_print = re.compile("Shake the (?P<var>([0-9a-zA-Z]| )*)\.")
 	for i in prog:
@@ -53,17 +56,24 @@ def compile(prog):
 		elif(lang_print.match(i)):
 			c = c + "putchar(" + var(lang_print.match(i).group("var")) + ");\n"
 		else :
-			print("ALERT!! THIS DIDNT WORK! HOLY SHITFUCK! RUN! THE TINCTURE IS GOING TO EXPLODE!")
-			break
+			print("ALERT!! THIS DIDNT WORK! HOLY SHITFUCK! RUN! THE TINCTURE IS GOING TO EXPLODE! I DIE NOW")#DEBUG
+			exit()
 	c = c + "}"
 	return c
 
 def expression(e):
-	#TODO nächschte mal
-	return e
+	returner = []
+	arr = e.split("potenciated by")
+	for summand in arr:
+		ret2 = []
+		arr2 = summand.split("diluted by")
+		for i in arr2:
+			ret2.append(var(i))
+		returner.append("-".join(ret2))
+	return "+".join(returner)
 
 def var(v):
-	v = "_".join(v.split(" "))
+	v = "_".join(v.strip().split(" "))
 	return v
 
 init()
